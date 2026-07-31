@@ -39,7 +39,8 @@ const Sidebar = ({ activeTab, setActiveTab }) => {
             КМ
           </div>
           <div className="flex flex-col">
-            <h1 className="font-bold text-gray-900 tracking-tight leading-tight">Келешек<br/>мектебі</h1>
+            <h1 className="font-bold text-gray-900 tracking-tight leading-tight">№67 Келешек<br/>мектебі</h1>
+            <span className="text-xs text-gray-500">Тараз қаласы</span>
           </div>
         </div>
 

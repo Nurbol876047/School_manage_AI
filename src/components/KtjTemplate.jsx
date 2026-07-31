@@ -13,6 +13,7 @@ const KtjTemplate = () => {
     hoursPerWeek: '1',
     year: '2025-2026',
     teacherName: '',
+    schoolName: 'Тараз қаласы, №67 Келешек мектебі',
     topics: ''
   });
 
@@ -151,6 +152,7 @@ ${formData.topics}
             }
         },
         children: [
+          new Paragraph({ text: formData.schoolName, alignment: AlignmentType.CENTER }),
           new Paragraph({ text: "Күнтізбелік-тақырыптық жоспар", heading: HeadingLevel.HEADING_1, alignment: AlignmentType.CENTER }),
           new Paragraph({ text: "" }),
           new Paragraph({ text: `Пән: ${formData.subject}` }),
@@ -201,8 +203,13 @@ ${formData.topics}
           
           <div className="space-y-4">
             <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Мектеп (Титул)</label>
+              <input type="text" name="schoolName" value={formData.schoolName} onChange={handleInputChange} className="w-full bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all mb-4" />
+            </div>
+
+            <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Пән <span className="text-red-500">*</span></label>
-              <input type="text" name="subject" value={formData.subject} onChange={handleInputChange} placeholder="Мысалы: Физика" className="w-full bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all" />
+              <input type="text" name="subject" value={formData.subject} onChange={handleInputChange} placeholder="Мысалы: Информатика" className="w-full bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all" />
             </div>
             
             <div className="grid grid-cols-2 gap-4">
@@ -225,7 +232,7 @@ ${formData.topics}
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Мұғалімнің аты-жөні</label>
-                <input type="text" name="teacherName" value={formData.teacherName} onChange={handleInputChange} placeholder="Иванов И.И." className="w-full bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all" />
+                <input type="text" name="teacherName" value={formData.teacherName} onChange={handleInputChange} placeholder="Мысалы: Ерпаизова К." className="w-full bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all" />
               </div>
             </div>
 
@@ -280,6 +287,7 @@ ${formData.topics}
           ) : ktjData.length > 0 ? (
             <div className="overflow-x-auto">
               <div className="min-w-[700px] font-serif text-sm">
+                <div className="text-center font-bold mb-4">{formData.schoolName}</div>
                 <div className="text-center font-bold mb-4">Күнтізбелік-тақырыптық жоспар</div>
                 <div className="grid grid-cols-2 gap-2 mb-4 text-gray-800">
                   <div><span className="font-semibold">Пән:</span> {formData.subject}</div>
