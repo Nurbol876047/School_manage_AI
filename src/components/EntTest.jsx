@@ -221,11 +221,20 @@ ${wrongTopics.join('; ')}
                   className="w-full border border-gray-200 rounded-xl px-4 py-2.5 outline-none focus:border-accent transition-colors"
                 >
                   <option value="Қазақ тілі">Қазақ тілі</option>
-                  <option value="Математика">Математика</option>
-                  <option value="Жаратылыстану">Жаратылыстану</option>
-                  <option value="Қазақстан тарихы">Қазақстан тарихы</option>
+                  <option value="Қазақ әдебиеті">Қазақ әдебиеті</option>
+                  <option value="Орыс тілі">Орыс тілі</option>
+                  <option value="Орыс әдебиеті">Орыс әдебиеті</option>
+                  <option value="Ағылшын тілі">Ағылшын тілі</option>
+                  <option value="Алгебра">Алгебра</option>
+                  <option value="Геометрия">Геометрия</option>
                   <option value="Информатика">Информатика</option>
+                  <option value="Қазақстан тарихы">Қазақстан тарихы</option>
+                  <option value="Дүниежүзі тарихы">Дүниежүзі тарихы</option>
                   <option value="География">География</option>
+                  <option value="Биология">Биология</option>
+                  <option value="Физика">Физика</option>
+                  <option value="Химия">Химия</option>
+                  <option value="Құқық негіздері">Құқық негіздері</option>
                 </select>
               </div>
 
