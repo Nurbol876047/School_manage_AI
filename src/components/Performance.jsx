@@ -26,7 +26,7 @@ const Sparkline = ({ data }) => {
   );
 };
 
-const Performance = ({ onSendMessage }) => {
+const Performance = ({ onSendMessage, entResults = [] }) => {
   const [showInstructions, setShowInstructions] = useState(false);
   const [file, setFile] = useState(null);
   const [status, setStatus] = useState('idle'); // idle | analyzing | result | error
@@ -369,6 +369,49 @@ ${csvData.substring(0, 20000)}`;
         )}
 
       </div>
+
+      {entResults.length > 0 && (
+        <div className="mt-8 bg-white rounded-[16px] shadow-soft border border-gray-50 flex flex-col p-6 lg:p-8">
+          <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+            <span className="bg-accent/10 p-2 rounded-lg text-accent">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="M9.86 11.23a1.99 1.99 0 0 0 2.28 0"/><path d="M8 15a4 4 0 0 0 8 0"/></svg>
+            </span>
+            ЕНТ тест нәтижелері (Өзіндік дайындық)
+          </h3>
+          
+          <div className="border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+            <table className="w-full text-left border-collapse">
+              <thead className="bg-gray-50 border-b border-gray-200 text-xs uppercase text-gray-500 font-semibold tracking-wider">
+                <tr>
+                  <th className="p-4">Аты-жөні</th>
+                  <th className="p-4">Пән</th>
+                  <th className="p-4 text-center">Күні</th>
+                  <th className="p-4 text-center">Қиындығы</th>
+                  <th className="p-4 text-center">Нәтиже</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100">
+                {entResults.map((res, idx) => (
+                  <tr key={idx} className="hover:bg-gray-50/50 transition-colors bg-white">
+                    <td className="p-4 font-medium text-gray-800 text-sm">{res.studentName}</td>
+                    <td className="p-4 text-sm text-gray-700">{res.subject}</td>
+                    <td className="p-4 text-center text-sm text-gray-600">{res.date}</td>
+                    <td className="p-4 text-center text-sm text-gray-600">{res.difficulty}</td>
+                    <td className="p-4 text-center">
+                      <div className="flex flex-col items-center justify-center">
+                        <span className={`font-bold text-sm ${res.percent >= 80 ? 'text-green-600' : res.percent >= 50 ? 'text-yellow-600' : 'text-red-600'}`}>
+                          {res.percent}%
+                        </span>
+                        <span className="text-xs text-gray-500">{res.score}</span>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

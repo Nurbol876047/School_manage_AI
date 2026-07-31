@@ -6,14 +6,20 @@ import AIPsychologist from './components/AIPsychologist';
 import DocumentCheck from './components/DocumentCheck';
 import Performance from './components/Performance';
 import ParentCommunication from './components/ParentCommunication';
+import EntTest from './components/EntTest';
 
 function App() {
   const [activeTab, setActiveTab] = useState('ktj');
   const [parentMessageData, setParentMessageData] = useState(null);
+  const [entResults, setEntResults] = useState([]);
 
   const handleSendMessage = (studentName) => {
     setParentMessageData({ studentName, reason: 'Үлгерім төмендеді' });
     setActiveTab('parents');
+  };
+
+  const handleTestComplete = (result) => {
+    setEntResults(prev => [result, ...prev]);
   };
 
   const renderContent = () => {
@@ -25,9 +31,11 @@ function App() {
       case 'documents':
         return <DocumentCheck />;
       case 'performance':
-        return <Performance onSendMessage={handleSendMessage} />;
+        return <Performance onSendMessage={handleSendMessage} entResults={entResults} />;
       case 'parents':
         return <ParentCommunication initialData={parentMessageData} clearInitialData={() => setParentMessageData(null)} />;
+      case 'ent':
+        return <EntTest onTestComplete={handleTestComplete} />;
       default:
         return <KtjTemplate />;
     }
