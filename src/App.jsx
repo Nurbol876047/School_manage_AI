@@ -7,6 +7,8 @@ import DocumentCheck from './components/DocumentCheck';
 import Performance from './components/Performance';
 import ParentCommunication from './components/ParentCommunication';
 import EntTest from './components/EntTest';
+import Games from './components/Games';
+import Constitution from './components/Constitution';
 
 function App() {
   const [activeTab, setActiveTab] = useState('ktj');
@@ -36,6 +38,10 @@ function App() {
         return <ParentCommunication initialData={parentMessageData} clearInitialData={() => setParentMessageData(null)} />;
       case 'ent':
         return <EntTest onTestComplete={handleTestComplete} />;
+      case 'games':
+        return <Games />;
+      case 'constitution':
+        return <Constitution />;
       default:
         return <KtjTemplate />;
     }

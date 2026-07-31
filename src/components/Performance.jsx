@@ -376,7 +376,7 @@ ${csvData.substring(0, 20000)}`;
             <span className="bg-accent/10 p-2 rounded-lg text-accent">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="M9.86 11.23a1.99 1.99 0 0 0 2.28 0"/><path d="M8 15a4 4 0 0 0 8 0"/></svg>
             </span>
-            ЕНТ тест нәтижелері (Өзіндік дайындық)
+            Тест нәтижелері (Өзіндік дайындық)
           </h3>
           
           <div className="border border-gray-200 rounded-xl overflow-hidden shadow-sm">
@@ -385,6 +385,7 @@ ${csvData.substring(0, 20000)}`;
                 <tr>
                   <th className="p-4">Аты-жөні</th>
                   <th className="p-4">Пән</th>
+                  <th className="p-4 text-center">Түрі</th>
                   <th className="p-4 text-center">Күні</th>
                   <th className="p-4 text-center">Қиындығы</th>
                   <th className="p-4 text-center">Нәтиже</th>
@@ -395,6 +396,7 @@ ${csvData.substring(0, 20000)}`;
                   <tr key={idx} className="hover:bg-gray-50/50 transition-colors bg-white">
                     <td className="p-4 font-medium text-gray-800 text-sm">{res.studentName}</td>
                     <td className="p-4 text-sm text-gray-700">{res.subject}</td>
+                    <td className="p-4 text-center text-sm"><span className="px-2 py-1 bg-gray-100 rounded-md font-medium text-gray-700">{res.testType || 'ЕНТ тест'}</span></td>
                     <td className="p-4 text-center text-sm text-gray-600">{res.date}</td>
                     <td className="p-4 text-center text-sm text-gray-600">{res.difficulty}</td>
                     <td className="p-4 text-center">

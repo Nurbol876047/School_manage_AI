@@ -18,8 +18,11 @@ const Header = () => {
         {/* Mobile Spacer */}
       </div>
 
-      {/* Right side: Empty for clean UI without roles/login */}
+      {/* Right side: Author Name */}
       <div className="flex items-center gap-6">
+        <span className="text-sm font-semibold text-accent hidden sm:block bg-accent/10 px-4 py-2 rounded-full border border-accent/20 shadow-sm backdrop-blur-sm transition-all hover:bg-accent/20 hover:scale-105">
+          Ерпаизова Куланда Едиловна
+        </span>
       </div>
     </header>
   );
