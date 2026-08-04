@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 import KtjTemplate from './components/KtjTemplate';
+import KmzhTemplate from './components/KmzhTemplate';
 import AIPsychologist from './components/AIPsychologist';
 import DocumentCheck from './components/DocumentCheck';
 import Performance from './components/Performance';
@@ -28,6 +29,8 @@ function App() {
     switch (activeTab) {
       case 'ktj':
         return <KtjTemplate />;
+      case 'kmzh':
+        return <KmzhTemplate />;
       case 'ai-psychologist':
         return <AIPsychologist />;
       case 'documents':

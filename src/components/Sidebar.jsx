@@ -1,9 +1,10 @@
 import React from 'react';
-import { CalendarDays, MessageCircleHeart, FolderCheck, LineChart, Users, Menu, FileQuestion, Gamepad2, Book } from 'lucide-react';
+import { CalendarDays, ListTodo, MessageCircleHeart, FolderCheck, LineChart, Users, Menu, FileQuestion, Gamepad2, Book } from 'lucide-react';
 
 const Sidebar = ({ activeTab, setActiveTab }) => {
   const menuItems = [
     { id: 'ktj', label: 'КТЖ-шаблон', icon: CalendarDays },
+    { id: 'kmzh', label: 'КМЖ-шаблон', icon: ListTodo },
     { id: 'ai-psychologist', label: 'AI-психолог', icon: MessageCircleHeart },
     { id: 'documents', label: 'Құжаттарды тексеру', icon: FolderCheck },
     { id: 'performance', label: 'Үлгерім', icon: LineChart },
