@@ -10,6 +10,7 @@ import ParentCommunication from './components/ParentCommunication';
 import EntTest from './components/EntTest';
 import Games from './components/Games';
 import Constitution from './components/Constitution';
+import PlagiarismCheck from './components/PlagiarismCheck';
 
 function App() {
   const [activeTab, setActiveTab] = useState('ktj');
@@ -35,6 +36,8 @@ function App() {
         return <AIPsychologist />;
       case 'documents':
         return <DocumentCheck />;
+      case 'plagiarism':
+        return <PlagiarismCheck />;
       case 'performance':
         return <Performance onSendMessage={handleSendMessage} entResults={entResults} />;
       case 'parents':
